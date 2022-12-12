@@ -14,5 +14,5 @@ export const MultipleUsersSchema = z.object({ users: z.array(UserSchema) });
 
 export const TeamSchema = z.object({
   name: z.string(),
-  users: z.array(z.string()),
+  members: z.array(z.string()),
 });

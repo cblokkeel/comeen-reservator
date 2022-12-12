@@ -6,7 +6,7 @@ const schema: Schema = new Schema(
       type: String,
       required: true,
     },
-    users: [
+    members: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Users',
