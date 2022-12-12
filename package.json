@@ -9,5 +9,10 @@
   },
   "devDependencies": {
     "nuxt": "3.0.0"
+  },
+  "dependencies": {
+    "h3-zod": "^0.3.10",
+    "mongoose": "^6.8.0",
+    "zod": "^3.20.0"
   }
 }
