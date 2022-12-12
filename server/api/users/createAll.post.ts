@@ -1,5 +1,4 @@
 import { zh } from 'h3-zod';
-import { User } from '~~/lib/types';
 import UsersModel from '~~/server/models/Users.model';
 import { MultipleUsersSchema } from './../../validations/index';
 
