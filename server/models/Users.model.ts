@@ -6,7 +6,11 @@ const schema: Schema = new Schema(
       type: String,
       required: true,
     },
-    desk: {
+    userId: {
+      type: String,
+      required: true,
+    },
+    deskId: {
       type: String,
       required: true,
     },
