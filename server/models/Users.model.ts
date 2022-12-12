@@ -14,10 +14,14 @@ const schema: Schema = new Schema(
       type: String,
       required: true,
     },
-    prsencesDays: {
+    presenceDays: {
       type: [String],
       enum: ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'],
       required: true,
+    },
+    team: {
+      type: Schema.Types.ObjectId,
+      ref: 'Team',
     },
   },
   { timestamps: true },

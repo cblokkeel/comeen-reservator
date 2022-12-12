@@ -9,6 +9,7 @@ export default defineEventHandler(async (event) => {
     const createdTeam = await TeamModel.create(body);
     return createdTeam;
   } catch (error: any) {
+    console.log('error teams.create', error);
     throw createError({ message: error.message });
   }
 });
