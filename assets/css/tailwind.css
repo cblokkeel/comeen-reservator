@@ -8,5 +8,5 @@ body {
 }
 
 .wrapper {
-  @apply my-8 max-w-5xl mx-auto;
+  @apply max-w-5xl mx-auto;
 }
