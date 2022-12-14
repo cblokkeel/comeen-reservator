@@ -1,6 +1,6 @@
 import { zh } from 'h3-zod';
 import UsersModel from '~~/server/models/Users.model';
-import { MultipleUsersSchema } from './../../validations/index';
+import { MultipleUsersSchema } from '../../validations/index';
 
 export default defineEventHandler(async (event) => {
   const body = await zh.useValidatedBody(event, MultipleUsersSchema);

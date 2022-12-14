@@ -1,3 +1,4 @@
+import { User } from '~~/lib/types';
 import { Team } from './../lib/types/index.d';
 import { defineStore } from 'pinia';
 
@@ -15,6 +16,7 @@ export const useTeamStore = defineStore('team', {
   }),
   actions: {
     async loadTeams() {
+      // @ts-ignore
       const teams: Team[] = await $fetch('/api/teams');
       this.teams = [...teams];
     },
@@ -22,16 +24,24 @@ export const useTeamStore = defineStore('team', {
       const filteredTeams = this.teams.filter((team) => {
         return team.name.toLowerCase().includes(search.toLowerCase());
       });
-      console.log(filteredTeams);
       this.filteredTeams = [...filteredTeams];
     },
     pickTeam(team: Team) {
-      console.log(team);
       this.selectedTeam = team;
       this.filteredTeams = [];
     },
     clearTeam() {
       this.selectedTeam = null;
+    },
+    async getMembers(): Promise<User[]> {
+      if (this.selectedTeam) {
+        const members = await $fetch(
+          `/api/teams/members/${this.selectedTeam.name}`,
+        );
+        return members;
+      }
+
+      return [];
     },
   },
 });
